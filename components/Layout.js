@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
           <span className="text-2xl">Golfr 🏌️</span>
           <span className="text-xl">Home</span>
         </span>
-        <Link href={`/golfers/${id}`}>
+        <Link href={`/golfers/${id}`} passHref>
           <span className="h-8 items-center text-xl ml-auto">
             {username}
             <span className="text-sm">
