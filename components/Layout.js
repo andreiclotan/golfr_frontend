@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { getUsername } from '../lib/userAuth'
+import { getUserId, getUsername } from '../lib/userAuth'
 
 const Layout = ({ children }) => {
   const [ username, setUsername ] = useState('')
+  const [ id, setId ] = useState('')
   useEffect(() => setUsername(getUsername()), [])
+  useEffect(() => setId(getUserId()), [])
 
   return (
     <>
@@ -14,7 +16,9 @@ const Layout = ({ children }) => {
           <span className="text-xl">Home</span>
         </span>
         <span className="h-8 items-center text-xl ml-auto">
-          {username}
+          <Link href={`/golfers/${id}`} passHref>
+            {username}
+          </Link>
           <span className="text-sm">
             {' ('}
             <Link href={'/logout'}>
