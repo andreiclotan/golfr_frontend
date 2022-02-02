@@ -15,18 +15,18 @@ const Layout = ({ children }) => {
           <span className="text-2xl">Golfr 🏌️</span>
           <span className="text-xl">Home</span>
         </span>
-        <Link href={`/golfers/${id}`} passHref>
-          <span className="h-8 items-center text-xl ml-auto">
+        <span className="h-8 items-center text-xl ml-auto">
+          <Link href={`/golfers/${id}`} passHref>
             {username}
-            <span className="text-sm">
-              {' ('}
-              <Link href={'/logout'}>
-                <a className="underline text-blue-700">logout</a>
-              </Link>
-              {')'}
-            </span>
+          </Link>
+          <span className="text-sm">
+            {' ('}
+            <Link href={'/logout'}>
+              <a className="underline text-blue-700">logout</a>
+            </Link>
+            {')'}
           </span>
-        </Link>
+        </span>
       </header>
       <div className="px-10 py-2">
         {children}
